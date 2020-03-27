@@ -1,0 +1,126 @@
+IPFS_PATH=/home/alarm/ipfsrepos/remoteone
+
+
+ipfs daemon &
+[1] 752
+[alarm@alarmpi ipfsstuffs]$ Initializing daemon...
+go-ipfs version: 0.4.23-6ce9a355f
+Repo version: 7
+System version: arm/linux
+Golang version: go1.13.7
+
+[alarm@alarmpi ipfsstuffs]$       
+[alarm@alarmpi ipfsstuffs]$ 
+[alarm@alarmpi ipfsstuffs]$ Swarm is limited to private network of peers with the swarm key
+Swarm key fingerprint: 24c971c0df9eadc036ae5ae6d4c0aa3f
+Swarm listening on /ip4/10.42.0.65/tcp/4001
+Swarm listening on /ip4/10.42.0.67/tcp/4001
+Swarm listening on /ip4/10.42.0.85/tcp/4001
+Swarm listening on /ip4/127.0.0.1/tcp/4001
+Swarm listening on /ip4/192.168.1.1/tcp/4001
+Swarm listening on /ip4/192.168.1.100/tcp/4001
+Swarm listening on /ip6/::1/tcp/4001
+Swarm listening on /p2p-circuit
+Swarm announcing /ip4/10.42.0.65/tcp/4001
+Swarm announcing /ip4/10.42.0.67/tcp/4001
+Swarm announcing /ip4/10.42.0.85/tcp/4001
+Swarm announcing /ip4/127.0.0.1/tcp/4001
+Swarm announcing /ip4/192.168.1.1/tcp/4001
+Swarm announcing /ip4/192.168.1.100/tcp/4001
+Swarm announcing /ip6/::1/tcp/4001
+API server listening on /ip4/127.0.0.1/tcp/5001
+WebUI: http://127.0.0.1:5001/webui
+Gateway (readonly) server listening on /ip4/127.0.0.1/tcp/8080
+Daemon is ready
+
+
+ ipfsstuffs]$ bin/ipfs-cluster-service init
+14:21:54.581  INFO     config: Saving configuration config.go:479
+configuration written to /home/alarm/.ipfs-cluster/service.json.
+14:21:54.586  INFO     config: Saving identity identity.go:73
+new identity written to /home/alarm/.ipfs-cluster/identity.json
+new empty peerstore written to /home/alarm/.ipfs-cluster/peerstore.
+
+
+
+
+ipfsstuffs]$  bin/ipfs-cluster-service daemon --bootstrap /ip4/157.245.63.46/tcp/9096/p2p/12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN
+14:29:45.505  INFO    service: Initializing. For verbose output run with "-l debug". Please wait... daemon.go:46
+14:29:47.134  INFO    cluster: IPFS Cluster v0.12.1 listening on:
+        /ip4/127.0.0.1/tcp/9096/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/10.42.0.67/tcp/9096/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/10.42.0.65/tcp/9096/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/10.42.0.85/tcp/9096/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/192.168.1.100/tcp/9096/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/192.168.1.1/tcp/9096/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/127.0.0.1/udp/9096/quic/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/10.42.0.67/udp/9096/quic/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/10.42.0.65/udp/9096/quic/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/10.42.0.85/udp/9096/quic/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/192.168.1.100/udp/9096/quic/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/192.168.1.1/udp/9096/quic/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+
+ cluster.go:133
+
+
+14:29:52.136  INFO    restapi: REST API (HTTP): /ip4/127.0.0.1/tcp/9094 restapi.go:502
+14:29:52.137  INFO  ipfsproxy: IPFS Proxy: /ip4/127.0.0.1/tcp/9095 -> /ip4/127.0.0.1/tcp/5001 ipfsproxy.go:307
+14:29:52.137  INFO       crdt: crdt Datastore created. Number of heads: 0. Current max-height: 0 crdt.go:262
+14:29:52.137  INFO       crdt: 'trust all' mode enabled. Any peer in the cluster can modify the pinset. consensus.go:265
+14:29:52.136  INFO    service: Bootstrapping to /ip4/157.245.63.46/tcp/9096/p2p/12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN daemon.go:214
+14:29:52.142  INFO    cluster: Cluster Peers (without including ourselves): cluster.go:640
+14:29:52.142  INFO    cluster:     - No other peers cluster.go:642
+14:29:52.142  INFO    cluster: ** IPFS Cluster is READY ** cluster.go:655
+14:29:57.139 ERROR  p2p-gorpc: failed to dial : all dials failed
+  * [/ip4/157.245.63.46/tcp/9096] dial tcp4 0.0.0.0:9096->157.245.63.46:9096: i/o timeout call.go:64
+14:29:57.139 ERROR    cluster: failed to dial : all dials failed
+  * [/ip4/157.245.63.46/tcp/9096] dial tcp4 0.0.0.0:9096->157.245.63.46:9096: i/o timeout cluster.go:944
+14:29:57.140 ERROR    service: bootstrap to /ip4/157.245.63.46/tcp/9096/p2p/12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN failed: failed to dial : all dials failed
+  * [/ip4/157.245.63.46/tcp/9096] dial tcp4 0.0.0.0:9096->157.245.63.46:9096: i/o timeout daemon.go:217
+
+----------------------------------------------
+
+
+worked
+
+
+[alarm@alarmpi ipfsstuffs]$  bin/ipfs-cluster-service daemon --bootstrap  /ip4/157.245.63.46/tcp/9096/p2p/12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN
+07:19:58.518  INFO    service: Initializing. For verbose output run with "-l debug". Please wait... daemon.go:46
+07:20:00.290  INFO    cluster: IPFS Cluster v0.12.1 listening on:
+        /ip4/127.0.0.1/tcp/9096/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/10.42.0.67/tcp/9096/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/10.42.0.65/tcp/9096/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/10.42.0.85/tcp/9096/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/192.168.1.1/tcp/9096/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/127.0.0.1/udp/9096/quic/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/10.42.0.67/udp/9096/quic/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/10.42.0.65/udp/9096/quic/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/10.42.0.85/udp/9096/quic/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+        /ip4/192.168.1.1/udp/9096/quic/p2p/12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr
+
+ cluster.go:133
+07:20:00.672  INFO    restapi: REST API (HTTP): /ip4/127.0.0.1/tcp/9094 restapi.go:502
+07:20:00.672  INFO  ipfsproxy: IPFS Proxy: /ip4/127.0.0.1/tcp/9095 -> /ip4/127.0.0.1/tcp/5001 ipfsproxy.go:307
+07:20:00.673  INFO    service: Bootstrapping to /ip4/157.245.63.46/tcp/9096/p2p/12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN daemon.go:214
+07:20:00.676  INFO       crdt: crdt Datastore created. Number of heads: 0. Current max-height: 0 crdt.go:262
+07:20:00.677  INFO       crdt: 'trust all' mode enabled. Any peer in the cluster can modify the pinset. consensus.go:265
+07:20:00.691  INFO    cluster: Cluster Peers (without including ourselves): cluster.go:640
+07:20:00.691  INFO    cluster:     - 12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN cluster.go:647
+07:20:00.691  INFO    cluster: ** IPFS Cluster is READY ** cluster.go:655
+07:20:00.895  INFO    cluster: 12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr: joined 12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN's cluster cluster.go:993
+
+^Z
+[2]+  Stopped                 bin/ipfs-cluster-service daemon --bootstrap /ip4/157.245.63.46/tcp/9096/p2p/12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN
+[alarm@alarmpi ipfsstuffs]$ bg
+[2]+ bin/ipfs-cluster-service daemon --bootstrap /ip4/157.245.63.46/tcp/9096/p2p/12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN &
+[alarm@alarmpi ipfsstuffs]$ 07:20:18.126  INFO       crdt: new pin added: QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS consensus.go:209
+07:20:18.191  INFO       crdt: adding new DAG head: QmajFHASxqnPKRxwzfUgYvW4DT5rP48qk8v8S1WfuPXu4T (height: 2) heads.go:114
+07:20:18.257  INFO   ipfshttp: IPFS Pin request succeeded:  QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS ipfshttp.go:372
+
+[alarm@alarmpi ipfsstuffs]$ 
+[alarm@alarmpi ipfsstuffs]$ 
+[alarm@alarmpi ipfsstuffs]$ ipfs cat QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS
+hello world1
+
+
+
