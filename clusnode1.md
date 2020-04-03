@@ -1,5 +1,5 @@
 
-### Create IPFS setup as a private node
+##### Create IPFS setup as a private node
 
 Set path for IPFS repo
 
@@ -10,7 +10,7 @@ export IPFS_PATH=/home/alarm/ipfsrepos/remoteone
 - Copy swarm.key to $IPFS_PATH
 
 
-### Start IPFS daemon 
+##### Start IPFS daemon 
 
 Start IPFS daemon
 
@@ -49,7 +49,7 @@ Daemon is ready
 
 ```
 
-### Node1
+##### Setup for Node 1
 
 
 Get cluster secret key from node0
@@ -91,7 +91,7 @@ new empty peerstore written to /home/alarm/.ipfs-cluster/peerstore.
 
 
 ```
-##### start cluster
+##### Start cluster
 
 - Start the cluster daemon using bootstraping link from node0
 
@@ -125,9 +125,9 @@ $  bin/ipfs-cluster-service daemon --bootstrap  /ip4/157.245.63.46/tcp/9096/p2p/
 07:20:00.691  INFO    cluster:     - 12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN cluster.go:647
 07:20:00.691  INFO    cluster: ** IPFS Cluster is READY ** cluster.go:655
 07:20:00.895  INFO    cluster: 12D3KooWJSXbJ9mUWxskiaDCkbz5JLgyC96rcv9DQ4R2GxT1QTEr: joined 12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN's cluster cluster.go:993
+```
 
-
-#### Observe messages received
+##### Observe messages received
 
 - In node2 a file is added to cluster
 
@@ -136,14 +136,15 @@ clusnode2.txt:added QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS hello1.txt
 
 ```
 
-- We get below message in node1
+We get below message in node1
+
 ```
 [alarm@alarmpi ipfsstuffs]$ 07:20:18.126  INFO       crdt: new pin added: QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS consensus.go:209
 07:20:18.191  INFO       crdt: adding new DAG head: QmajFHASxqnPKRxwzfUgYvW4DT5rP48qk8v8S1WfuPXu4T (height: 2) heads.go:114
 07:20:18.257  INFO   ipfshttp: IPFS Pin request succeeded:  QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS ipfshttp.go:372
 ```
 
-#### Verify if file added is visible in this node
+##### Verify if file added is visible in this node
 
 - It is available
 

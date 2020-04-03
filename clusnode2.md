@@ -4,6 +4,9 @@
 - starting IPFS
 - Init cluster
 
+[Link to refer ](clusnode1.md)
+
+
 
 ##### Start the cluster node2   
 

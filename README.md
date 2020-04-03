@@ -16,7 +16,7 @@ C) Naming of the nodes as follows
 - Node1 - A node on a Raspberry PI  
 - Node2 - A node on a local system 
 
-Create the swarm.key and copy to repo directory of all he nodes
+Create the swarm.key and copy to repo directory of all the nodes
 
 D) Install IPFS cluster components
 
@@ -48,14 +48,14 @@ a10cf512951dec734b5911b9cf4f6c3d299ebee6bf5eb152ebaede973325a7f3
 
 ```
 
-F) In Node0 init and start cluster
+F) In Node0 set cluster secret environment
 
 ```
 export CLUSTER_SECRET=a10cf512951dec734b5911b9cf4f6c3d299ebee6bf5eb152ebaede973325a7f3
 
 ```
 
-### Node0 
+### Steps for Node 0 
 
 ##### Init the cluster
 
@@ -108,9 +108,10 @@ $ 13:47:56.242  INFO    service: Initializing. For verbose output run with "-l d
 ```
 
 
-##### Node the id of the cluster daemon
+##### Display the id of the cluster daemon
 
 - Observe the cluster id
+- Note the listener for cluster node0
 
 ```
 $ bin/ipfs-cluster-ctl id
@@ -140,7 +141,7 @@ $ bin/ipfs-cluster-ctl id
 ##### Note the listener of cluster
 
 - Note the listener for cluster node0
-- Thus is needed for other nodes     
+- This is needed for other nodes     
 - In this case it is 
 
 ```
