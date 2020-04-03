@@ -55,12 +55,17 @@ export CLUSTER_SECRET=a10cf512951dec734b5911b9cf4f6c3d299ebee6bf5eb152ebaede9733
 
 ```
 
-##### Init and start cluster
+### Node0 
+
+##### Init the cluster
 
 
-- ipfs-cluster-service init
+- Set environment varible for cluster secret
+- Then run ipfs-cluster-service init
 
 ```
+export CLUSTER_SECRET=a10cf512951dec734b5911b9cf4f6c3d299ebee6bf5eb152ebaede973325a7f3
+
  ipfs-cluster-service init
 12:36:39.040  INFO     config: Saving configuration config.go:479
 configuration written to /home/rameshbn/.ipfs-cluster/service.json.
@@ -70,8 +75,9 @@ new empty peerstore written to /home/rameshbn/.ipfs-cluster/peerstore.
 
 ```
 
+##### Start cluster
 
-- ipfs-cluster-service daemon
+- Run ipfs-cluster-service daemon
 
 ```
 bin/ipfs-cluster-service daemon &
@@ -102,8 +108,9 @@ $ 13:47:56.242  INFO    service: Initializing. For verbose output run with "-l d
 ```
 
 
-#####Node the id of the cluster daemon
+##### Node the id of the cluster daemon
 
+- Observe the cluster id
 
 ```
 $ bin/ipfs-cluster-ctl id
@@ -132,7 +139,9 @@ $ bin/ipfs-cluster-ctl id
 
 ##### Note the listener of cluster
 
-- In this case
+- Note the listener for cluster node0
+- Thus is needed for other nodes     
+- In this case it is 
 
 ```
     - /ip4/157.245.63.46/tcp/9096/p2p/12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN
