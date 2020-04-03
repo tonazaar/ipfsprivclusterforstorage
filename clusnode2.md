@@ -1,3 +1,13 @@
+
+
+##### Refer steps in node1 for 
+- starting IPFS
+- Init cluster
+
+
+##### Start the cluster node2   
+
+```
 Inspiron-3542:~/ipfsstuffs$ bin/ipfs-cluster-service daemon --bootstrap  /ip4/157.245.63.46/tcp/9096/p2p/12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN
 11:53:44.767  INFO    service: Initializing. For verbose output run with "-l debug". Please wait... daemon.go:46
 11:53:45.416  INFO    cluster: IPFS Cluster v0.12.1 listening on:
@@ -25,11 +35,20 @@ Inspiron-3542:~/ipfsstuffs$ bin/ipfs-cluster-service daemon --bootstrap  /ip4/15
 11:53:51.611  INFO    cluster: ** IPFS Cluster is READY ** cluster.go:655
 11:53:52.156  INFO    cluster: 12D3KooWCSyyqP4Wbh5e5B91mduJX1CohtUhyNa6USX8Sn5kbQJh: joined 12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN's cluster cluster.go:993
 
+```
 
+#### Observe cluster joining info in above
 
+```
+11:53:52.156  INFO    cluster: 12D3KooWCSyyqP4Wbh5e5B91mduJX1CohtUhyNa6USX8Sn5kbQJh: joined 12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN's cluster cluster.go:993
 
+```
 
+#### Creating file for testing
 
+ - Creating file in node2
+
+```
 -Inspiron-3542:~/ipfsstuffs$ bin/ipfs-cluster-ctl add /tmp/hello1.txt
 added QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS hello1.txt
 11:57:54.945  INFO    cluster: pinning QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS on [12D3KooWCSyyqP4Wbh5e5B91mduJX1CohtUhyNa6USX8Sn5kbQJh 12D3KooWHfigHPCDJAWQ9DiTYSbcM5gVZKPSgQPyhjr8zMwwhjVN]: cluster.go:1400
@@ -40,9 +59,14 @@ added QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS hello1.txt
  restapi.go:117
 ramesh@ramesh-Inspiron-3542:~/ipfsstuffs$ 11:57:55.488  INFO   ipfshttp: IPFS Pin request succeeded:  QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS ipfshttp.go:372
 
+```
 
+#### Checking if file is pinned
 
+It shows pinned in two places
+- Not sure if it is correct
 
+```
 -Inspiron-3542:~/ipfsstuffs$ bin/ipfs-cluster-ctl status QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS
 11:58:43.434  INFO restapilog: 127.0.0.1 - - [26/Mar/2020:11:58:43 +0530] "GET /pins/QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS?local=false HTTP/1.1" 200 648
  restapi.go:117
@@ -50,21 +74,27 @@ QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS :
     > ramesh-Inspiron-3542 : PINNED | 2020-03-26T11:58:43.293125766+05:30
     > openvpn-srv          : PINNED | 2020-03-26T06:28:43.412582665Z
 
+```
 
+##### Testing file in node2
 
+On node2 testing
 
+```
 Inspiron-3542:~/ipfsstuffs$ ipfs cat QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS
 hello world1
 
+```
 
 
 
-------------------------on node0
-wrong ipfs_path, still worked
+##### Testing file in node0
+
+On node0 testing
+
+```
 ~/ipfsstuffs$  ipfs cat QmRJrrgf3UgHmf8DcDtdBiYeJke7Qiq2vPvSMNYW6GWhRS
 hello world1
-rameshbn@openvpn-srv:~/ipfsstuffs$ 
-rameshbn@openvpn-srv:~/ipfsstuffs$ env |grep IPFS
-IPFS_PATH=/home/rameshbn/ramipfs
+```
 
 

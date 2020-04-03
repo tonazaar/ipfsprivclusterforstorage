@@ -13,8 +13,8 @@ The goipfs is used (not jsipfs)
 C) Naming of the nodes as follows
 
 - Node0 - A node on a remote server
-- Node1 - A node on a local system 
-- Node2 - A node on a Raspberry PI  
+- Node1 - A node on a Raspberry PI  
+- Node2 - A node on a local system 
 
 Create the swarm.key and copy to repo directory of all he nodes
 
@@ -149,9 +149,26 @@ $ bin/ipfs-cluster-ctl id
 ```
 
 
-##### In node1, node2 follow the below steps
+##### Setup for node1, node2 below
 
 
+[Setup for node1](clusnode1.md)
+- It also has example testing of data inserted in another node
+
+[Setup for node2](clusnode2.md)
+- It also has example testing for data inserting and testing in another node
+
+
+[Checking number of peers](checkingpeers.md)
+- It has example of output after peer joining
+
+##### References
+
+- https://medium.com/towardsblockchain/setting-up-your-first-distributed-private-storage-network-on-ipfs-part-1-a6ff15222b90
+
+- https://medium.com/towardsblockchain/setting-up-your-first-distributed-private-storage-network-on-ipfs-part-2-4b6f96712bae
+
+- https://medium.com/towardsblockchain/setting-up-your-first-distributed-private-storage-network-on-ipfs-part-3-48851488b8d8
 
 
 
